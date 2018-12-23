@@ -1,0 +1,57 @@
+{
+  "name": "node-ts-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test-watch": "jest --verbose --watchAll",
+    "build-ts": "tsc",
+    "start": "npm run serve",
+    "serve": "node -r dotenv/config dist/index.js",
+    "watch-node": "nodemon -r dotenv/config dist/index.js",
+    "watch-ts": "tsc -w",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --write --parser 'typescript'",
+      "git add"
+    ],
+    "**/*.yml": [
+      "prettier --write --parser 'yaml'",
+      "git add"
+    ],
+    "**/*.json": [
+      "prettier --write --parser 'json'",
+      "git add"
+    ],
+    "**/*.md": [
+      "prettier --write --parser 'markdown",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/node": "^10.12.18",
+    "dotenv": "^6.2.0"
+  }
+}

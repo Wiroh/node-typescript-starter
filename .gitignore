@@ -1,0 +1,11 @@
+# Build
+dist
+
+# Dependency directory
+node_modules
+
+# npm
+package-lock.json
+
+# API keys and secrets
+.env
